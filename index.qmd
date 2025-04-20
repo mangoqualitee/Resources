@@ -1,0 +1,32 @@
+---
+title: "Resources"
+listing:
+  contents: .
+  # type: table
+  sort: "date desc"
+  # categories: false
+  # sort-ui: false
+  filter-ui: [title, categories]
+  fields: [date, title, categories]
+  template: tgif.ejs
+  date-format: DD MMM, YYYY
+  page-size: 25
+page-layout: article
+title-block-banner: url("https://res.cloudinary.com/lesswrong-2-0/image/upload/c_crop,g_custom/c_fill,dpr_auto,q_auto,f_auto,g_auto:faces/ohabryka_Topographic_aquarelle_book_cover_by_Thomas_W._Schaller_f9c9dbbe-4880-4f12-8ebb-b8f0b900abc1_m4k6dy_734413")
+# css: /css/tgif.css
+---
+
+:::{.callout-note appearance="simple" icon=false}
+I have not explored/read everything listed out here: if something is here, it just means that I am vaguely aware of said thing. Things I have some appreciation for are marked with a {{< bi check-circle-fill >}} and can be filtered by typing parsed in the search box on this page. Things I have passing or partial familiarity with are marked with a {{< bi check2-circle >}}  and can be filtered by typing pseudo in the search box on this page.
+
+To filter by tags, enter one of the following in the search box: 
+
+`probability`  • `logic`  • `paper`  • `folding`  • `cutting`  • `tiling`  • `graphs`  • `game`  • `chess`  • `geometry`  • `card` 
+:::
+
+
+<p>&nbsp;</p>
+
+<style type="text/css">
+  #hyvor-talk-view{display:none;}
+</style>
