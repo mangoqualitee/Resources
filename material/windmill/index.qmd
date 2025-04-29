@@ -1,10 +1,11 @@
 ---
 title: "Windmill"
 date: "2022-10-14"
-categories: [geometry]
-fields: [date, title]
-css: /css/tgif.css
-toc: true
+
+categories: [A-todo, B-puzzle]
+contributors: []
+status: ["todo"]
+urls: []
 ---
 
 Source: [IMO 2011, C3](https://www.imo-official.org/problems/IMO2011SL.pdf)

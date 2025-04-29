@@ -1,19 +1,20 @@
 ---
 title: "Resources"
+title-block-banner: url("https://res.cloudinary.com/lesswrong-2-0/image/upload/c_crop,g_custom/c_fill,dpr_auto,q_auto,f_auto,g_auto:faces/ohabryka_Topographic_aquarelle_book_cover_by_Thomas_W._Schaller_f9c9dbbe-4880-4f12-8ebb-b8f0b900abc1_m4k6dy_734413")
+# page-layout: article
+# css: /css/tgif.css
 listing:
   contents: .
-  # type: table
+  fields: [status, title, categories, urls, contributors]
   sort: "date desc"
-  # categories: false
-  # sort-ui: false
+  type: table
+  table-striped: true
+  field-links: [title]
+  sort-ui: [title, date, categories, status]
   filter-ui: [title, categories]
-  fields: [date, title, categories]
+  # categories: true
+  # date-format: DD MMM, YYYY
   template: tgif.ejs
-  date-format: DD MMM, YYYY
-  page-size: 25
-page-layout: article
-title-block-banner: url("https://res.cloudinary.com/lesswrong-2-0/image/upload/c_crop,g_custom/c_fill,dpr_auto,q_auto,f_auto,g_auto:faces/ohabryka_Topographic_aquarelle_book_cover_by_Thomas_W._Schaller_f9c9dbbe-4880-4f12-8ebb-b8f0b900abc1_m4k6dy_734413")
-# css: /css/tgif.css
 ---
 
 :::{.callout-note appearance="simple" icon=false}

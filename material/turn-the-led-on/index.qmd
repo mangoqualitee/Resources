@@ -1,10 +1,11 @@
 ---
 title: "Turn the LED on"
 date: "2021-03-25"
+
 categories: [probability]
-fields: [date, title, categories]
-css: /css/tgif.css
-toc: true
+contributors: [""]
+status: ["done"]
+urls: ["hello"]
 ---
 
 
