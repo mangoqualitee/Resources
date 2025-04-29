@@ -2,9 +2,9 @@
 title: "Windmill"
 date: "2022-10-14"
 
+status: "todo"
 categories: [A-todo, B-puzzle]
 contributors: []
-status: ["todo"]
 urls: []
 ---
 

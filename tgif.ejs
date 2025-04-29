@@ -1,93 +1,89 @@
 ```{=html}
 <table class="quarto-listing-table table">
-    <tbody class="list">
+    <thead>
         <tr>
-        <th>Status</th>
-        <th>Title</th>
-        <th>Categories</th>
-        <th>URLs</th>
-        <th>Contributors</th>
+            <th scope="col">Status</th>
+            <th scope="col">Title</th>
+            <th scope="col">Categories</th>
+            <th scope="col">URLs</th>
+            <th scope="col">Contributors</th>
         </tr>
-    <% for (const item of items) { %>
-        <tr data-index="0" data-categories="null" <%= metadataAttrs(item) %>>
-        <!-- <td class="listing-date"> -->
-            <!-- <%= item.date %> -->        
-        <!-- </td> -->
-        <td class="listing-status">
-            <% const caty = item.status; %>
-            <span style="display: none;" class="listing-status">
-                <%= caty %> &nbsp;
-            </span>
-            <% if(caty == "todo") { %>
-            <span class="bi bi-list-task" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-            <% } %>
-            <% if(caty == "prog") { %>
-            <span class="bi bi-hourglass-split" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-            <% } %>
-            <% if(caty == "done") { %>
-            <span class="bi bi-check-square-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-            <% } %>
-        </td>
-        <td class="listing-title">
-            <a href="<%= item.path %>"><%= item.title %></a>     
-        </td>
-        <td>
-            <span style="display: none;" class="listing-categories">
-                <% for (const caty of item.categories) { %>
-                    <%= caty %> &nbsp;
-                <% } %>
-            </span>
-            <% for (const caty of item.categories) { %>
-                <!-- <span data-bs-placement="top" title="<%= caty %>"><%= caty %> </span> -->
+    </thead>
+    <tbody class="list">
+        <%
+        // Define icon mappings for categories
+        const categoryIcons = {
+            "probability": { icon: "bi-dice-5-fill",           },
+            "chess":       { icon: "bi-grid-3x3",              },
+            "logic":       { icon: "bi-door-open-fill",        },
+            "paper":       { icon: "bi-file",                  },
+            "folding":     { icon: "bi-file-earmark",          },
+            "cutting":     { icon: "bi-scissors",              },
+            "tiling":      { icon: "bi-columns",               },
+            "graphs":      { icon: "bi-bounding-box-circles",  },
+            "game":        { icon: "bi-joystick",              },
+            "geometry":    { icon: "bi-circle-square",         },
+            "card":        { icon: "bi-suit-spade-fill",       }
+        };
 
-                <% if(caty == "probability") { %>
-                <span class="bi bi-dice-5-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "chess") { %>
-                <span class="bi bi-grid-3x3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "logic") { %>
-                <span class="bi bi-door-open-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "paper") { %>
-                <span class="bi bi-file" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "folding") { %>
-                <span class="bi bi-file-earmark" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "cutting") { %>
-                <span class="bi bi-scissors" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "tiling") { %>
-                <span class="bi bi-columns" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "graphs") { %>
-                <span class="bi bi-bounding-box-circles" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "game") { %>
-                <span class="bi bi-joystick" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "geometry") { %>
-                <span class="bi bi-circle-square" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-                <% if(caty == "card") { %>
-                <span class="bi bi-suit-spade-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= caty %>"></span>
-                <% } %>
-            <% } %>
-        </td>        
-        <td>        
-            <% for (const caty of item.urls) { %>
-                <span data-bs-placement="top" title="<%= caty %>"><a href="<%= caty %>">🔗</a> </span>
-            <% } %>
-        </td>        
-        <td>        
-            <% for (const caty of item.contributors) { %>
-                <span data-bs-placement="top" title="<%= caty %>"><%= caty %> </span>
-            <% } %>
-        </td>        
-</tr>
-<% } %>
-</tbody>
+        // Define status icons
+        const statusIcons = {
+            "todo": "bi-list-task",
+            "prog": "bi-hourglass-split",
+            "done": "bi-check-square-fill"
+        };
+
+        // Process each item in the collection
+        for (const item of items) {
+        %>
+            <tr <%= metadataAttrs(item) %>>
+                <td class="listing-status">
+                    <% const status = item.status || "todo"; %>
+                    <% if (statusIcons[status]) { %>
+                        <span class="bi <%= statusIcons[status] %>"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="top"
+                              title="<%= status %>">
+                        </span>
+                    <% } else { %>
+                        <%= status %>
+                    <% } %>
+                </td>
+
+                <td class="listing-title">
+                    <a href="<%= item.path || '#' %>"><%= item.title || "Untitled" %></a>
+                </td>
+
+                <td class="listing-categories">
+                    <% const categories = Array.isArray(item.categories) ? item.categories : []; %>
+                    <% for (const category of categories) { %>
+                        <% const iconClass = categoryIcons[category] || "bi-tag"; %>
+                        <span class="bi <%= iconClass.icon %>"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="top"
+                              title="<%= category || "uncategorized" %>">
+                        </span>
+                    <% } %>
+                </td>
+
+                <td class="listing-urls">
+                    <% const urls = Array.isArray(item.urls) ? item.urls : []; %>
+                    <% for (const url of urls) { %>
+                        <span data-bs-placement="top" title="<%= url %>">
+                            <a href="<%= url %>">🔗</a>
+                        </span>
+                    <% } %>
+                </td>
+
+                <td class="listing-contributors">
+                    <% const contributors = Array.isArray(item.contributors) ? item.contributors : []; %>
+                    <% for (const contributor of contributors) { %>
+                        <span><%= contributor %></span>
+                    <% } %>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
 </table>
 
 ```
