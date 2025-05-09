@@ -1,0 +1,13 @@
+version: 1.2
+
+email:
+  info: info@example.com
+  support: support@example.com
+
+engine:
+  jupyter: "[Jupyter](https://jupyter.org)"
+  knitr: "[Knitr](<https://yihui.name/knitr>)"
+
+categories:
+  A: "computing"
+  B: "informatics"

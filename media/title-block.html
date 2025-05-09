@@ -1,0 +1,86 @@
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+$if(title)$
+<h1 class="title">$title$</h1>
+$endif$
+$if(subtitle)$
+<p class="subtitle lead">$subtitle$</p>
+$endif$
+  
+$if(hide-description)$
+$elseif(description)$
+<div>
+  <div class="description">
+    $description$
+  </div>
+</div>
+$endif$
+
+$if(categories)$
+  $if(quarto-template-params.title-block-categories)$
+<div class="quarto-categories">
+  $for(categories)$
+  <div class="quarto-category">$categories$</div>
+  $endfor$
+</div>
+  $endif$
+$endif$
+
+<!-- <div class="sourceCode" id="temp"> -->
+<!--   <pre class="sourceCode yaml code-with-copy"> -->
+<!--     <code class="sourceCode yaml"> -->
+<!--       <span id="temp-url"> -->
+<!--     </code> -->
+<!--   </pre> -->
+<!-- </div> -->
+
+<code class="sourceCode">$if(status)$status: $status$$endif$
+$if(urls)$
+urls:
+$for(urls)$
+$urls$,
+$endfor$
+$endif$
+$if(contributors)$
+contributors:
+$for(contributors)$
+$contributors$,
+$endfor$
+$endif$
+</code>
+
+$if(status)$
+  <!-- $if(quarto-template-params.title-block-categories)$ -->
+<div class="resources-status">
+  <!-- $for(status)$ -->
+  <div class="resources-status">$status$</div>
+  <!-- $endfor$ -->
+</div>
+  <!-- $endif$ -->
+$endif$
+
+
+$if(urls)$
+  <!-- $if(quarto-template-params.title-block-categories)$ -->
+<div class="resources-urls">
+  $for(urls)$
+  <div class="resources-url"><a href="$urls$">🔗</a></div>
+  $endfor$
+</div>
+  <!-- $endif$ -->
+$endif$
+
+$if(contributors)$
+  <!-- $if(quarto-template-params.title-block-categories)$ -->
+<div class="resources-contributors">
+  $for(contributors)$
+  <div class="resources-contributor">$contributors$</div>
+  $endfor$
+</div>
+  <!-- $endif$ -->
+$endif$
+
+
+$title-metadata.html()$
+
+</header>

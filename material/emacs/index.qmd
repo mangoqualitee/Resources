@@ -1,0 +1,96 @@
+---
+title: Emacs
+description: Thoughts and References when Learning Emacs.
+
+categories: []
+contributors: [Mickey Peterson, Alexey Kutepov]
+status: done
+urls: []
+---
+
+# References
+
+::: {.callout-tip}
+# Learners don't Disable Emacs Menu Bar [§](https://www.masteringemacs.org/article/bad-emacs-advice)
+
+Good advice, but I haven't used the menu bar in the 3 days I have been using emacs. I went cold turkey.
+:::
+
+::: {.callout-note}
+# Replacing tmux and GNU screen with Emacs  [§](https://www.masteringemacs.org/article/replacing-tmux-gnu-screen-emacs)
+
+> Emacs can accomplish nearly everything your terminal multiplexer can do.
+
+This is the promise of Emacs after all.
+:::
+
+::: {.callout-note}
+# GNU Readline [§](https://www.masteringemacs.org/article/keyboard-shortcuts-every-command-line-hacker-should-know-about-gnu-readline)
+
+`C-t`, `M-t`	transpose chars, did not work for me.
+
+`C-_`, `C-x C-u`	and from manual `C-?` and `C-M-_` also, reverses, confusing.
+
+`C-x C-x`	Swap point and mark, seems useful for viw/mi< eg. aprntly op says "means it’s not really such a useful thing to know about.", hehe, because he says "have to remember where the mark is! This is like Emacs before M-x transient-mark-mode became a thing."
+
+`C-]`, `M-C-]`	Character search forward/backward, nice i use this a lot in modal editing.
+
+`M-#`	Insert a comment, hehe alt+shift bound to kb-layout chng. Ya: op says "in a line editor where commenting out a line has narrow applications."
+
+`C-c C-l`	Clear screen, redemption!
+
+`C-q` or `C-v`	Quoted insert, what is this, does not work in python repl for me. Oh: op says "ANSI control codes. To insert `^[`, type `C-q` ESC.", still doesn't work for me in python repl.
+
+apparently, gglng op's name refers wiki on Charles Bronson (prisoner) wow apparently [[tom-hardy]] did a bio-pick. added to [[sylabus]]
+
+macro recording in line editor, neat, does not seem to be working for python repl
+
+`M-*`	conflict of key bindings (alt+shift=kb layout change) on my end, can't test this.
+
+wow, op says "NOTE: If `C-s` freezes your terminal, you can blame the superannuated “flow control” feature — it stops the flow of text so you can pause at will and read it. Wonderful feature in the 1980s when your teletype would type faster than you could read the text. Less so today."
+
+`M-.`	last argument of previous command appended to point.
+
+`C-M-f`	prints out all known functions; `C-M-v` all known variables.
+
+nice read
+:::
+
+::: {.callout-warning}
+# Practical Intro, insights hackability around emacs lisp [§](https://www.youtube.com/watch?v=81MdyDYqB-A)
+
+{{< video https://www.youtube.com/watch?v=81MdyDYqB-A >}}
+:::
+
+::: {.callout-important}
+# Effective Editiing Movement [§](https://www.masteringemacs.org/article/effective-editing-movement)
+
+So far, the keybindings look all right for cursor navigation. For text selection and modification the keybindings suck so far. Common things:
+
+- selecting end of word and WORD, as in vi
+- selecting inside paranthesis
+- moving by treesitter nodes
+- visual mode, so far, with `C-Space` sucks
+
+Lets see what this article has got.
+
+
+:::
+
+::: {.callout-important}
+# Introduction to IDO Mode [§](https://www.masteringemacs.org/article/introduction-to-ido-mode)
+
+**Adds fuzzy finding.** That means if you were to search for the buffer “*Customize Group: Foobar*” without Ido you’d have to contort your fingers and type the *, then TAB (and hope it completes) and if not, type in some more; then rinse and repeat.
+
+`M-n`, `M-p` Cycles through the next or previous work directories. I like this feature for completion for dired. 
+
+This IDO article makes me feel emacs has so much complexity for suppose a simple completion usecase. Fuzzy finding?
+
+I hate that `find-file` does not open `dired` when using IDO. Turning it off because of that.
+:::
+
+::: {.callout-note}
+# Understanding Minibuffer Completion [§](https://www.masteringemacs.org/article/understanding-minibuffer-completion)
+
+Went mostly over my head. I did not understand any foundational thing. Felt complicated and unnecssary emacs history made it more confusing. Did not feel useful.
+:::

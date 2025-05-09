@@ -1,0 +1,21 @@
+---
+title: Page Rank
+description: Thoughts and References when Learning Page Rank.
+
+categories: ["A-Computing", "B-LinearAlgebra"]
+contributors: ["Sergey Brin", "Larry Page"]
+status: done
+urls: ["https://en.wikipedia.org/wiki/PageRank", "https://www.cis.upenn.edu/~mkearns/teaching/NetworkedLife/pagerank.pdf"]
+---
+
+# Problem
+
+The Page Rank algorithm is a method for measuring the importance of website pages...
+
+## Core Concept
+
+At its heart, PageRank works by counting the number and quality of links to determine an estimate of how important a website is...
+
+## Mathematical Formulation
+
+The mathematical formulation of PageRank involves a probability vector and a transition matrix...
