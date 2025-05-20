@@ -1,0 +1,18 @@
+---
+title: OCaml
+description: Loved, Used, Ideal Functional Programming Language
+
+categories: []
+contributors: []
+status: progress
+urls: []
+---
+
+# OCaml Programming: Correct+Efficient+Beautiful
+
+- [Website Course Video Book](https://cs3110.github.io/textbook/cover.html)
+
+
+# Meta
+
+- [](http://dx.doi.org/10.1017/S095679680800676X)

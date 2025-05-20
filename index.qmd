@@ -3,14 +3,14 @@ title: "Resources"
 description: "Categorized Learning Resource Database"
 title-block-banner: media/tree.jpeg
 
-format:
-  html:
-    page-layout: full
-    # css: /media/css/custom.css
+# format:
+#   html:
+#     page-layout: full
+#     css: /media/css/custom.css
 
 listing:
-  contents: material
-  fields: [status, title, categories, urls, contributors]
+  contents: materials
+  fields: [title, description, categories]
   sort: "date desc"
   type: table
   table-striped: true
@@ -21,8 +21,19 @@ listing:
   # date-format: DD MMM, YYYY
   # template: media/tgif.js
 
-# page-layout: article
+page-layout: full
 ---
+
+::: {.column-margin}
+The resources are not just dead links, rather something I have grapelled and interacted with. This page is not meant for things I have not interacted with and will not in the near future (those are meant for [[syllabus]]. Keeping this in mind, I am still envisioning the exact interface and implementation of this database. The root of the debate is that each interaction has an entry point (`topic/index.qmd`) with mutliple urls, contributors, meta links spread over the page. The current debated ideas are, in usage chronology:
+
+- Yaml metadata. (rigid, need to modify)
+- Entry point with modified. (free flowing, flexible)
+:::
+
+Many (not all) are meant to be a log of my interaction with that resource. Interaction has three integral parts as of now. These are Insights, References, Meta. Inside the References, there may be many Nodes. Each Node has its own urls, contributors, status. Each node may also have categories (format).
+
+It just occurred to me: I love resource-sharing discord channels. They have pinned messages plus they have ongoing chat which is in the form of a log.
 
 ::: {.callout-note appearance="simple" icon=false}
 I have not explored/read everything listed out here: if something is here, it just means that I am vaguely aware of said thing. Things I have some appreciation for are marked with a {{< bi check-circle-fill >}} and can be filtered by typing parsed in the search box on this page. Things I have passing or partial familiarity with are marked with a {{< bi check2-circle >}}  and can be filtered by typing pseudo in the search box on this page.

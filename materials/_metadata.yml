@@ -1,0 +1,7 @@
+format:
+  html:
+    template-partials:
+      - ../media/title-block.html
+    css: ../media/title-block.scss
+
+sidebar: resources

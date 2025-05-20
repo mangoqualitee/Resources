@@ -1,0 +1,3 @@
+[submodule "materials/clang"]
+	path = materials/clang
+	url = git@github-haxfn:learn-clang

@@ -1,0 +1,10 @@
+---
+title: The Odin Project
+
+status: todo
+categories: []
+urls: ["https://www.theodinproject.com"]
+contributors: []
+---
+
+
